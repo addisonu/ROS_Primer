@@ -114,6 +114,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 file(INSTALL DESTINATION "/home/addison/ROS_Primer/catkin_ws/install" TYPE FILE FILES "/home/addison/ROS_Primer/catkin_ws/build/catkin_generated/installspace/.rosinstall")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/addison/ROS_Primer/catkin_ws/build/beginner_tutorials/cmake_install.cmake")
+
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()
