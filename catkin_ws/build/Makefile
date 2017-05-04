@@ -231,6 +231,19 @@ doxygen/fast:
 .PHONY : doxygen/fast
 
 #=============================================================================
+# Target rules for targets named add_two_ints_server
+
+# Build rule for target.
+add_two_ints_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 add_two_ints_server
+.PHONY : add_two_ints_server
+
+# fast build rule for target.
+add_two_ints_server/fast:
+	$(MAKE) -f beginner_tutorials/CMakeFiles/add_two_ints_server.dir/build.make beginner_tutorials/CMakeFiles/add_two_ints_server.dir/build
+.PHONY : add_two_ints_server/fast
+
+#=============================================================================
 # Target rules for targets named beginner_tutorials_genpy
 
 # Build rule for target.
@@ -255,6 +268,19 @@ beginner_tutorials_gennodejs: cmake_check_build_system
 beginner_tutorials_gennodejs/fast:
 	$(MAKE) -f beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_gennodejs.dir/build
 .PHONY : beginner_tutorials_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named add_two_ints_client
+
+# Build rule for target.
+add_two_ints_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 add_two_ints_client
+.PHONY : add_two_ints_client
+
+# fast build rule for target.
+add_two_ints_client/fast:
+	$(MAKE) -f beginner_tutorials/CMakeFiles/add_two_ints_client.dir/build.make beginner_tutorials/CMakeFiles/add_two_ints_client.dir/build
+.PHONY : add_two_ints_client/fast
 
 #=============================================================================
 # Target rules for targets named beginner_tutorials_genlisp
@@ -612,8 +638,10 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... add_two_ints_server"
 	@echo "... beginner_tutorials_genpy"
 	@echo "... beginner_tutorials_gennodejs"
+	@echo "... add_two_ints_client"
 	@echo "... beginner_tutorials_genlisp"
 	@echo "... beginner_tutorials_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
